@@ -1,4 +1,4 @@
-# _Nucella lapillus_ genome
+# The Atlantic dog whelk (_Nucella lapillus_) genome
 
 A reference genome was assembled using ONT long reads. 
 
