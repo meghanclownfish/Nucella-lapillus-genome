@@ -21,3 +21,5 @@ busco \
  --metaeuk \
   -c 10 \
   -l metazoa_odb10
+
+  
