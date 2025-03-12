@@ -11,7 +11,7 @@ An individual was collected in Nahant, MA, in 2024 and is pictured below. The fo
 
 ## Library prep and sequencing 
 
-DNA was prepped with the ONT ligation sequencing kit and NEB companion module. Sequencing was done on a PromithION. Six flow cells in total were used to generate 112,563,429,491 bp raw data.
+Libraries were prepped with the ONT ligation sequencing kit and NEB companion module. Sequencing was done on a PromithION. Six flow cells in total were used to generate 112,563,429,491 bp raw data.
 
 <img src="https://github.com/user-attachments/assets/7ef08c7c-550f-4c68-bed8-1c2788dff560" width="500" height="200">
 
