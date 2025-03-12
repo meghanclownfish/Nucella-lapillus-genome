@@ -43,7 +43,7 @@ spin in the microcentrifuge and removing residual ethanol. Let sit open to the a
 ## ZYMO clean and concentrator: 
 * follow manufacturers protocol 
 
-<img src="https://github.com/meghanclownfish/snail-DNA-extractions/assets/78237587/eddb834b-56b7-4127-9019-828cfe4871b5" width="300" height="200">
+<img src="https://github.com/meghanclownfish/snail-DNA-extractions/assets/78237587/6296ed62-d1dc-4a1e-b7d7-a242100dd5e8" width="300" height="200">
 
 
 
