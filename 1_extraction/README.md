@@ -17,7 +17,8 @@
 3. add 15 μl of 20mg/ml Proteinase K (qiagen)
 4. using a wide bore pipette, pipette up and down to homogenize the sample  
 5. incubate @ 60C and 250 rpm overnight 
-6. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min (note: I sometimes had to let the samples sit for ~48 hours)
+6. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min
+   (note: I sometimes had to let the samples incubate for ~48 hours)
 ### chloroform reaction (do 3x)
 7. working in the hood add 600μl Chloroform
 8. mix by inversion until milky and continue to mix by gentle inversion for 15 minutes
