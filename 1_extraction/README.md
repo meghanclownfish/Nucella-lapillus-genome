@@ -14,11 +14,11 @@
 ### lysis
 1. warm the CTAB solution before use if it was refrigerated to get the detergent back into solution 
 2. dissect the snail, separate tissue, and mince. resuspend tissue in 600μl CTAB solution 
-3. add 15 μl of 20mg/ml Proteinase K (qiagen)
+3. add 15 μl of 20mg/ml Proteinase K (Qiagen)
 4. using a wide bore pipette, pipette up and down to homogenize the sample  
 5. incubate @ 60C and 250 rpm overnight 
-6. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min
-   (note: I sometimes had to let the samples incubate for ~48 hours)
+6. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min \
+   note: I sometimes had to let the samples incubate for ~48 hours
 ### chloroform reaction (do 3x)
 7. working in the hood add 600μl Chloroform
 8. mix by inversion until milky and continue to mix by gentle inversion for 15 minutes
@@ -30,8 +30,8 @@
 13. precipitate DNA by leaving in –80°C freezer for 40 min 
 14. spin for 20 min @ 13,000 rpm / 16,627 rcf 
 15. remove/discard supernatant by gentle pipetting
-16. gently add 1000 ul of cold 70% ethanol to wash the pellet (do not mix, just dribble down tube)
-17. air-dry the pellet (but do not let dry to completion): remove as much ethanol as possible by subjecting the tube to a quick
+16. gently add 1000 ul of cold 70% ethanol to wash the pellet (do not mix, dribble down side of tube)
+17. air-dry the pellet (but not to completion): remove as much ethanol as possible by subjecting the tube to a quick
 spin in the microcentrifuge and removing residual ethanol. Let sit open to the air for a few minutes.
 18. resuspend pellet in TE buffer(200 μl) 
 
