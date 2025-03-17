@@ -33,4 +33,7 @@ busco \
   -c 20 \
   -l metazoa_odb10
 ```
-<img width="640" alt="Screenshot 2025-03-17 at 12 16 39 PM" src="https://github.com/user-attachments/assets/9e16a00b-071c-4d57-8f9e-0c77c8ee6935" />
+
+<img width="350" alt="Screenshot 2025-03-17 at 12 22 44 PM" src="https://github.com/user-attachments/assets/5cb23bb0-0326-45a1-9daa-c965dd6146d0" />
+
+
