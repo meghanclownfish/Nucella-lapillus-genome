@@ -29,7 +29,6 @@ busco \
   -i /home/meghan/nucella_genome/hifiasm/hifiasm_2kb.p_ctg.fa \
   -o busco_hifi \
   -m genome \
-
  --metaeuk \
   -c 20 \
   -l metazoa_odb10
