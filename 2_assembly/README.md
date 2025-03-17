@@ -14,5 +14,12 @@ seqkit -m 2000 -o all6_2kb.fastq -j10 output_reads.fq
 
 # Assemble with Hifiasm
 ```
+#for me this ran overnight and was done in the morning
+nohup hifiasm -t50 --ont -o ONT_2kb.asm all6_2kb.fastq > hifiasm.log 2>&1 &
+```
+# Evaluate with BUSCO
 
+```
+#for me this ran overnight and was done in the morning
+nohup hifiasm -t50 --ont -o ONT_2kb.asm all6_2kb.fastq > hifiasm.log 2>&1 &
 ```
