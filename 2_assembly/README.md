@@ -29,7 +29,9 @@ busco \
   -i /home/meghan/nucella_genome/hifiasm/hifiasm_2kb.p_ctg.fa \
   -o busco_hifi \
   -m genome \
+
  --metaeuk \
   -c 20 \
   -l metazoa_odb10
 ```
+<img width="640" alt="Screenshot 2025-03-17 at 12 16 39 PM" src="https://github.com/user-attachments/assets/9e16a00b-071c-4d57-8f9e-0c77c8ee6935" />
