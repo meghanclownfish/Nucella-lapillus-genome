@@ -13,11 +13,12 @@
 ## protocol: 
 ### lysis
 1. warm the CTAB solution before use if it was refrigerated to get the detergent back into solution 
-2. dissect the snail, separate tissue, and mince. resuspend tissue in 600μl CTAB solution 
-3. add 15 μl of 20mg/ml Proteinase K (Qiagen)
-4. using a wide bore pipette, pipette up and down to homogenize the sample  
-5. incubate @ 60C and 250 rpm overnight 
-6. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min \
+2. dissect the snail, separate tissue, and mince. resuspend tissue in 600μl CTAB solution \
+   note: mincing is important for proper lysis; mince it very well!
+4. add 15 μl of 20mg/ml Proteinase K (Qiagen)
+5. using a wide bore pipette, pipette up and down to homogenize the sample  
+6. incubate @ 60C and 250 rpm overnight 
+7. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min \
    note: I sometimes had to let the samples incubate for ~48 hours
 ### chloroform reaction (do 3x)
 7. working in the hood add 600μl Chloroform
