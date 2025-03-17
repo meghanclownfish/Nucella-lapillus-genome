@@ -40,7 +40,7 @@ spin in the microcentrifuge and removing residual ethanol. Let sit open to the a
 * incubate at 37C for ~1 hour (mix at 200rpm for samples with high concentrations)
 * if contamination remains, incubate at 56C for ~10 min
 
-## ZYMO clean and concentrator: 
+## ZYMO gDNA clean and concentrator: 
 * follow manufacturers protocol 
 
 <img src="https://github.com/meghanclownfish/snail-DNA-extractions/assets/78237587/6296ed62-d1dc-4a1e-b7d7-a242100dd5e8" width="300" height="200">
