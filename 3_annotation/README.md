@@ -3,7 +3,7 @@
 2. Braker3
 3. EnTAP
 
-   <img width="319" alt="Screenshot 2025-03-12 at 3 41 40 PM" src="https://github.com/user-attachments/assets/180161dc-8bf1-43ff-ba51-fef8734f33e0" />
+<img width="319" alt="Screenshot 2025-03-12 at 3 41 40 PM" src="https://github.com/user-attachments/assets/180161dc-8bf1-43ff-ba51-fef8734f33e0" />
 
 
 # identify repeats
@@ -32,3 +32,12 @@ nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nuce
 nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome-families.fa -xsmall \
 -gff ../hifi_2kb_decontaminated.fa &
 ```
+
+# map RNAseq data
+
+## first build a HISAT2 library 
+
+```
+hisat2-build -p 30 hifi_2kb_decontaminated.fa.masked hifiasm_masked
+```
+
