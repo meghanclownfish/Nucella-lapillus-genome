@@ -43,10 +43,10 @@ These two steps took less than two hours.
 hisat2-build -p 30 hifi_2kb_decontaminated.fa.masked hifiasm_masked
 
 #mapping 
-hisat2 -x new_hifiasm_masked --dta -p 30 -q -U \
+hisat2 -x hifiasm_masked --dta -p 30 -q -U \
 SRR1752284_trimmed.fq,SRR1752285_trimmed.fq,SRR1752286_trimmed.fq,SRR1752287_trimmed.fq,\
 SRR1752288_trimmed.fq,SRR1752289_trimmed.fq,SRR1752290_trimmed.fq,SRR1752291_trimmed.fq,\
-SRR999591_trimmed.fq -S v2_all_mapped_rna.sam
+SRR999591_trimmed.fq -S all_mapped_rna.sam
 ```
 
 ## Braker3
