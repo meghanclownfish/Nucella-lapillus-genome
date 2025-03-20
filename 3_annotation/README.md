@@ -66,8 +66,8 @@ nohup singularity exec \
 -B $PWD/interproscan-5.73-104.0/data:/opt/interproscan/data \
 -B $PWD/input:/input \   
 -B $PWD/temp:/temp\
--B $PWD/output:/output \    i
-nterproscan_5.73-104.0.sif\
+-B $PWD/output:/output \
+interproscan_5.73-104.0.sif\
 /opt/interproscan/interproscan.sh --cpu 35\
 --input /input/iso_filt_v2_aug_enforcement.faa\
 --disable-precalc -iprlookup --goterms\
