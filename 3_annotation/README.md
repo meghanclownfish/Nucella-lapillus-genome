@@ -28,7 +28,7 @@ nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nuce
 # mask repeats
 
 ```
-#  this took about 5 houts
+#this took about 5 houts
 nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome-families.fa -xsmall \
 -gff ../hifi_2kb_decontaminated.fa &
 ```
@@ -40,4 +40,10 @@ nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_gen
 ```
 hisat2-build -p 30 hifi_2kb_decontaminated.fa.masked hifiasm_masked
 ```
-
+## mapping 
+```
+hisat2 -x new_hifiasm_masked --dta -p 30 -q -U \
+SRR1752284_trimmed.fq,SRR1752285_trimmed.fq,SRR1752286_trimmed.fq,SRR1752287_trimmed.fq,\
+SRR1752288_trimmed.fq,SRR1752289_trimmed.fq,SRR1752290_trimmed.fq,SRR1752291_trimmed.fq,\
+SRR999591_trimmed.fq -S v2_all_mapped_rna.sam
+```
