@@ -60,5 +60,17 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_br
 --bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 ```
-
-
+## Interproscan
+```
+nohup singularity exec \
+-B $PWD/interproscan-5.73-104.0/data:/opt/interproscan/data \
+-B $PWD/input:/input \   
+-B $PWD/temp:/temp\
+-B $PWD/output:/output \    i
+nterproscan_5.73-104.0.sif\
+/opt/interproscan/interproscan.sh --cpu 35\
+--input /input/iso_filt_v2_aug_enforcement.faa\
+--disable-precalc -iprlookup --goterms\
+--output-dir /output\
+--tempdir /temp &
+```
