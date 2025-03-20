@@ -52,9 +52,15 @@ SRR999591_trimmed.fq -S v2_all_mapped_rna.sam
 ```
 
 ## Braker3
-
+for a more detail about this site, see 
 ```
-
+#run braker3
+nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_braker /home/meghan/braker3.sif braker.pl \
+--genome=/home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
+--species=v1_nucella  --softmasking --threads=35 \
+--prot_seq=/home/meghan/nucella_genome/database/eukaryota_and_molluscan_protien.fasta \
+--bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
+--AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 ```
 
 
