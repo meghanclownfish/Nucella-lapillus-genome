@@ -1,4 +1,4 @@
-# workflow
+# Workflow
 1. identify and mask repeats
 2. map RNA to masked genome 
 3. Braker3
@@ -8,7 +8,7 @@
 <img width="319" alt="Screenshot 2025-03-12 at 3 41 40 PM" src="https://github.com/user-attachments/assets/180161dc-8bf1-43ff-ba51-fef8734f33e0" />
 
 
-## identify repeats
+## Identify repeats
 ```
 conda activate repeatmodeler_env
 
@@ -27,7 +27,7 @@ nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nuce
 
 ```
 
-## mask repeats
+## Mask repeats
 
 ```
 #this took about 5 hours
@@ -35,7 +35,7 @@ nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_gen
 -gff ../hifi_2kb_decontaminated.fa &
 ```
 
-## map RNAseq data
+## Map RNAseq data
 These two steps took less than two hours. 
 
 ```
