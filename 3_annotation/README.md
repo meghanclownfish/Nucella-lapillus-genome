@@ -38,13 +38,11 @@ nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_gen
 ## map RNAseq data
 These two steps took less than two hours. 
 
-### first build the index 
-
 ```
+#build the index 
 hisat2-build -p 30 hifi_2kb_decontaminated.fa.masked hifiasm_masked
-```
-### mapping 
-```
+
+#mapping 
 hisat2 -x new_hifiasm_masked --dta -p 30 -q -U \
 SRR1752284_trimmed.fq,SRR1752285_trimmed.fq,SRR1752286_trimmed.fq,SRR1752287_trimmed.fq,\
 SRR1752288_trimmed.fq,SRR1752289_trimmed.fq,SRR1752290_trimmed.fq,SRR1752291_trimmed.fq,\
