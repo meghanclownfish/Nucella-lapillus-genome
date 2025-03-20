@@ -52,7 +52,7 @@ SRR999591_trimmed.fq -S v2_all_mapped_rna.sam
 ```
 
 ## Braker3
-for a more detail about this site, see [Braker3.sh](/Braker3.sh) 
+for a more detail about this site, see [Braker3.sh](https://github.com/meghanclownfish/Nucella-lapillus-genome/blob/main/3_annotation/Braker3.sh) 
 ```
 #run braker3
 nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_braker /home/meghan/braker3.sif braker.pl \
