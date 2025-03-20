@@ -28,14 +28,14 @@ nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nuce
 # mask repeats
 
 ```
-#this took about 5 houts
+#this took about 5 hours
 nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome-families.fa -xsmall \
 -gff ../hifi_2kb_decontaminated.fa &
 ```
 
 # map RNAseq data
 
-## first build a HISAT2 library 
+## first build the index 
 
 ```
 hisat2-build -p 30 hifi_2kb_decontaminated.fa.masked hifiasm_masked
