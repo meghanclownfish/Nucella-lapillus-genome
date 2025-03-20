@@ -28,6 +28,7 @@ nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nuce
 # mask repeats
 
 ```
+#  this took about 5 houts
 nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome-families.fa -xsmall \
 -gff ../hifi_2kb_decontaminated.fa &
 ```
