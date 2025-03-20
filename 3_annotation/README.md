@@ -1,11 +1,10 @@
+![image](https://github.com/user-attachments/assets/15340fb5-dfc1-4994-8fbf-668ffb1d43cc)
 # Workflow
 1. identify and mask repeats
 2. map RNA to masked genome 
 3. Braker3
 4. TSEBRA
 5. EnTAP/ Interproscan
-
-<img width="319" alt="Screenshot 2025-03-12 at 3 41 40 PM" src="https://github.com/user-attachments/assets/180161dc-8bf1-43ff-ba51-fef8734f33e0" />
 
 
 ## Identify repeats
@@ -92,3 +91,5 @@ interproscan_5.73-104.0.sif\
 --output-dir /output\
 --tempdir /temp &
 ```
+
+<img width="319" alt="Screenshot 2025-03-12 at 3 41 40 PM" src="https://github.com/user-attachments/assets/180161dc-8bf1-43ff-ba51-fef8734f33e0" />
