@@ -69,9 +69,18 @@ singularity exec /home/meghan/braker3.sif tsebra.py \
 -e /home/meghan/nucella_genome/annotate/no_scaffold/braker/hintsfile.gff \
 -c no_enforcement.cfg -o aug_enforcement.gtf 
 ```
-### keep only the longest isoform
+### filtering
 ```
+singularity run /home/meghan/agat_1.4.2--pl5321hdfd78af_0.sif
 
+agat_sp_keep_longest_isoform.pl -f aug_enforcement.gtf -o iso_filt_aug_enforcement.gtf 
+
+# 9597 L2 isoforms with CDS removed (shortest CDS)
+
+# extract prot seq 
+agat_sp_extract_sequences.pl -g iso_filt_aug_enforcement.gtf \
+-f /home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
+-o iso_filt_aug_enforcement.faa -p
 ```
 
 
