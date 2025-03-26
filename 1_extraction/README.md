@@ -16,7 +16,7 @@
 2. dissect the snail, separate tissue, and mince. resuspend tissue in 600μl CTAB solution \
    note: mincing is important for proper lysis; mince it very well!
 4. add 15 μl of 20mg/ml Proteinase K (Qiagen)
-5. using a wide bore pipette, pipette up and down to homogenize the sample  
+5. using a wide-bore pipette, pipette up and down to homogenize the sample  
 6. incubate @ 60C and 250 rpm overnight 
 7. if tissue is still not dissolved in the morning, incubate @ 65C and 250 rpm for ~2 hours, inverting every 10 min \
    note: I sometimes had to let the samples incubate for ~48 hours
@@ -31,7 +31,7 @@
 13. precipitate DNA by leaving in –80°C freezer for 40 min 
 14. spin for 20 min @ 13,000 rpm / 16,627 rcf 
 15. remove/discard supernatant by gentle pipetting
-16. gently add 1000 ul of cold 70% ethanol to wash the pellet (do not mix, dribble down side of tube)
+16. gently add 1000 μL of cold 70% ethanol to wash the pellet (do not mix, dribble down side of tube)
 17. air-dry the pellet (but not to completion): remove as much ethanol as possible by subjecting the tube to a quick
 spin in the microcentrifuge and removing residual ethanol. Let sit open to the air for a few minutes.
 18. resuspend pellet in TE buffer(200 μl) 
@@ -39,11 +39,11 @@ spin in the microcentrifuge and removing residual ethanol. Let sit open to the a
 ## RNAse A Treatment 
 * add 10ul of RNAse A
 * mix by inversion 
-* incubate at 37C for ~1 hour (mix at 200rpm for samples with high concentrations)
-* if contamination remains, incubate at 56C for ~10 min
+* incubate at 37C for ~1 hour (mix at 200rpm for samples with high concentrations) \
+ note: the protein will be filtered out by the ZYMO clean and concentrator
 
 ## ZYMO gDNA clean and concentrator: 
-* follow manufacturers protocol 
+* follow manufacturer's protocol 
 
 <img src="https://github.com/meghanclownfish/snail-DNA-extractions/assets/78237587/6296ed62-d1dc-4a1e-b7d7-a242100dd5e8" width="300" height="200">
 
