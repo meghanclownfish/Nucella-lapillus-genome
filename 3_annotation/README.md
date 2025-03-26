@@ -49,7 +49,7 @@ SRR999591_trimmed.fq -S all_mapped_rna.sam
 ```
 
 ## Braker3
-For more details about this step, and filtering predictions for the longest isoform, see [Braker3.sh](https://github.com/meghanclownfish/Nucella-lapillus-genome/blob/main/3_annotation/Braker3.sh) 
+
 ```
 #run braker3
 nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_braker /home/meghan/braker3.sif braker.pl \
@@ -63,8 +63,17 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_br
 ## TSEBRA
 ```
 #run TSEBRA
+singularity exec /home/meghan/braker3.sif tsebra.py \
+-g /home/meghan/nucella_genome/annotate/no_scaffold/braker/GeneMark-ETP/genemark.gtf \
+-k /home/meghan/nucella_genome/annotate/no_scaffold/braker/Augustus/augustus.hints.gtf \
+-e /home/meghan/nucella_genome/annotate/no_scaffold/braker/hintsfile.gff \
+-c no_enforcement.cfg -o aug_enforcement.gtf 
+```
+### keep only the longest isoform
+```
 
 ```
+
 
 ## EnTAP
 ```
