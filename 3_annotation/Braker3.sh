@@ -15,13 +15,13 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_br
 
 #run TSEBRA 
 singularity exec /home/meghan/braker3.sif tsebra.py \
--g /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/GeneMark-ETP/genemark.gtf \
--k /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/Augustus/augustus.hints.gtf \
--e /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/hintsfile.gff \
+-g /home/meghan/nucella_genome/annotate/no_scaffold/braker/GeneMark-ETP/genemark.gtf \
+-k /home/meghan/nucella_genome/annotate/no_scaffold/braker/Augustus/augustus.hints.gtf \
+-e /home/meghan/nucella_genome/annotate/no_scaffold/braker/hintsfile.gff \
 -c no_enforcement.cfg -o aug_enforcement.gtf 
 
 # keep longest iso and extract protein seq
-agat_sp_keep_longest_isoform.pl -f aug_enforcement.gtf -o iso_filt_aug_enforcement.gtf
+agat_sp_keep_longest_isoform.pl -f aug_enforcement.gtf -o iso_filt_aug_enforcement.gtf 
 
 # 9597 L2 isoforms with CDS removed (shortest CDS)
 
