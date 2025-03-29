@@ -93,7 +93,7 @@ singularity run ../entap.sif
 #configure
 EnTAP --config --run-ini entap_run.params --entap-ini entap_config.ini -t 5
 
-#update all paths in parms and ini with given info before moving on. For eggNog SQL database
+#update all paths in parms and ini with given info before moving on. For eggNog SQL database in .ini
 #include path but not file (EnTap will not understand if you give file) 
 
 #run entap
