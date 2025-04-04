@@ -33,6 +33,15 @@ busco \
   -c 20 \
   -l metazoa_odb10
 ```
+
+# Decontaminate with blast and blobtools
+I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled (https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on Galaxy. 
+
+```
+#remove mito contigs 
+seqkit grep -v -f mito_contig.txt hifi_cleaned_barcode.bp.p_ctg.fa -o hifi_cleaned_barcode_no_mito_ctg.fa
+```
+
 ![image](https://github.com/user-attachments/assets/f0095271-512d-43bf-b98e-410a6ff94eed)
 
 
