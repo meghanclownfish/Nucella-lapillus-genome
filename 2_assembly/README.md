@@ -35,7 +35,7 @@ busco \
 ```
 
 # Decontaminate with blast and blobtools
-I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled (https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on Galaxy (https://usegalaxy.org/). 
+I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled (https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on Galaxy (https://usegalaxy.org/). This search identified three contigs (mito_contig.txt) that were removed.  
 
 ```
 #remove mito contigs 
