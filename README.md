@@ -5,7 +5,7 @@ A reference genome was assembled using ONT long reads.
 The final genome and annotations can be found under the NCBI BioProject PRJNA1238877. 
 
 ## Sample information 
-An individual was collected in Nahant, MA, in 2024 and is pictured below. The foot tissue was used for DNA extraction and isolation. The protocol can be found in the [extraction file](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/6ee388e96acaa53040e682a8f8f69fad87a258cc/extraction)  
+An individual was collected in Nahant, MA, in 2024 and is pictured below. The foot tissue was used for DNA extraction and isolation. The extraction protocol can be found in the [extraction file](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/6ee388e96acaa53040e682a8f8f69fad87a258cc/extraction)  
 
 <img src="https://github.com/meghanclownfish/snail-DNA-extractions/assets/78237587/2455c8bc-c58e-4127-9c2b-5f94616deefb" width="200" height="200">
 
