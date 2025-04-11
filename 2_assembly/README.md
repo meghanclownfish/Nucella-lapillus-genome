@@ -38,7 +38,7 @@ seqkit stats hifi_cleaned_barcode.bp.p_ctg.fa -j10
 ```
 
 # Decontaminate with blast and blobtools
-I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled (https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on Galaxy (https://usegalaxy.org/). This search identified three contigs (mito_contig.txt) that were removed.  
+I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled [here](https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on [Galaxy](https://usegalaxy.org/). This search identified three contigs (mito_contig.txt) that were removed.  
 
 ```
 #remove mito contigs 
