@@ -36,16 +36,23 @@ busco \
 #seqkit stats
 seqkit stats hifi_cleaned_barcode.bp.p_ctg.fa -j10
 ```
+# Check for adapter contamination
+
+```
+./run_fcsadaptor.sh --fasta-input /home/meghan/nucella_genome/hifiasm/bp_trim_assemble/hifi_cleaned_barcode.bp.p_ctg.fa --output-dir ./output_fcs --euk --container-engine singularity --image fcs-adaptor.sif
+```
+
 
 # Decontaminate with blast and blobtools
-I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled [here](https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on [Galaxy](https://usegalaxy.org/). This search identified three contigs (mito_contig.txt) that were removed.  
+I identified mitogenome contigs by blasting against the mitogenome of Nucella already assembled [here](https://doi.org/10.1007/s00227-024-04424-3). Because this was lightweight, I ran it on [Galaxy](https://usegalaxy.org/). This search identified three contigs (mito_contig.txt) that were removed. After this, I ran FCS GX on [Galaxy](https://usegalaxy.org/) as a first pass to remove any bacterial contaminants (output = nlap_genome_no_mito_no_bac.fasta).    
 
 ```
 #remove mito contigs 
 seqkit grep -v -f mito_contig.txt hifi_cleaned_barcode.bp.p_ctg.fa -o hifi_cleaned_barcode_no_mito_ctg.fa
 
-#blobtools
+#FCS GX on galaxy
 
+#blobtools
 #create directory
 blobtools create \
       --fasta /home/meghan/nucella_genome/april_hifiasm/bp_trim_assemble/nlap_genome/nlap_genome_no_mito_no_bac.fasta \
@@ -54,7 +61,29 @@ blobtools create \
       --taxdump ~/nucella_genome/database/taxdump \
 ~/nucella_genome/database/nucella_2kb_clean_noMito_noBac
 
-#add busco and hits 
+#run BUSCO
+nohup busco \
+  -i nlap_genome_no_mito_no_bac.fasta\
+  -o no_mito_no_bac_busco \
+  -m genome \
+ --metaeuk \
+  -c 35 \
+  -l metazoa_odb10 &
+
+#and diamond (this was run on a different server, hence the different paths)
+./diamond blastx \
+        --query /work/Trussell_Lab/no_adapter/nlap_genome_no_mito_no_bac.fasta \
+        --db /work/Trussell_Lab/database/reference_proteomes.dmnd \
+        --outfmt 6 qseqid staxids bitscore qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore \
+        --log \
+        --faster \
+        --max-target-seqs 1 \
+        --evalue 1e-25 \
+        --threads 50 \
+        --out fast_hifi_cleaned_barcode.diamond.blastx.out
+
+
+#add busco and hits to blobtools 
 blobtools add \
 --busco /home/meghan/nucella_genome/april_hifiasm/bp_trim_assemble/nlap_genome/no_mito_no_bac_busco.tsv \
 --hits /home/meghan/nucella_genome/april_hifiasm/bp_trim_assemble/nlap_genome/fast_hifi_cleaned_barcode.diamond.blastx.out \
@@ -87,6 +116,7 @@ nohup busco \
 seqkit stats nlap_genome_no_mito_no_bac.filtered.fasta -j25
 
 ```
+
 
 ![image](https://github.com/user-attachments/assets/f0095271-512d-43bf-b98e-410a6ff94eed)
 
