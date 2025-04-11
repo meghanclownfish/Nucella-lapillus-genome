@@ -116,7 +116,7 @@ nohup busco \
 seqkit stats nlap_genome_no_mito_no_bac.filtered.fasta -j25
 
 ```
-Time for [annotation](https://github.com/meghanclownfish/Nucella-lapillus-genome/edit/main/2_assembly/README.md#:~:text=hifiasm.sh-,3_annotation,-4_functional%2Dannotation)!
+Time for [annotation](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/3_annotation#readme)!
 
 ![image](https://github.com/user-attachments/assets/f0095271-512d-43bf-b98e-410a6ff94eed)
 
