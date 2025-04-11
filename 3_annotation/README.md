@@ -16,26 +16,26 @@ singularity pull dfam-tetools-latest.sif docker://dfam/tetools:latest
 
 #build database
 singularity run ../dfam-tetools-latest.sif
-BuildDatabase -name nucella_genome hifi_2kb_decontaminated.fa 
+BuildDatabase -name nucella_genome_april nlap_genome_no_mito_no_bac.filtered.fasta 
 
 #start an instance 
 singularity instance start ../dfam-tetools-latest.sif run_rm
 
-#run repeat modeler, this took ~92 hours 
-nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nucella_genome -threads 35 &
+#run repeat modeler, this took ~95 hours 
+nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nucella_genome_april -threads 45 &
 
 ```
 
 ## Mask repeats
 
 ```
-#this took about 5 hours
-nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome-families.fa -xsmall \
--gff ../hifi_2kb_decontaminated.fa &
+#this took ~12 hours
+nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib nucella_genome_april-families.fa -xsmall \
+-gff nlap_genome_no_mito_no_bac.filtered.fasta &
 ```
 
 ## Map RNAseq data
-These two steps took less than two hours. 
+These two steps took one hour. 
 
 ```
 #build the index 
@@ -52,11 +52,11 @@ SRR999591_trimmed.fq -S all_mapped_rna.sam
 
 ```
 #run braker3
-nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_braker /home/meghan/braker3.sif braker.pl \
---genome=/home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
---species=v1_nucella  --softmasking --threads=35 \
---prot_seq=/home/meghan/nucella_genome/database/eukaryota_and_molluscan_protien.fasta \
---bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
+nohup singularity exec -B /home/meghan/nucella_genome/annotate/v3_nucella_april/braker /home/meghan/braker3.sif braker.pl \
+--genome=/home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked \
+--species=nLapillus  --softmasking --threads=30 \
+--prot_seq=/home/meghan/nucella_genome/database/metazoa_and_mlluscan_protien.fasta \
+--bam=/home/meghan/nucella_genome/annotate/v3_nucella_april/april_all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 ```
 
