@@ -5,7 +5,7 @@ Remove adapters and filter data for desired qualities:
 #remove adapters
 porechop -i input_reads.fastq -o all6_harsh_chop.fastq --threads 45 --check_reads 40000 --adapter_threshold 85 --middle_threshold 85
 
-#filter reads for quality 
+#filter reads for quality (this takes longer than filtering for length)
 nohup seqkit seq -Q 5 -o all6_harsh_chop_q5.fastq -j35 all6_harsh_chop.fastq &
 
 #and length
@@ -72,6 +72,19 @@ blobtools filter \
      --output nucella_2kb_clean_noMito_noBac_FILTERED \
      --summary STDOUT ~/nucella_genome/database/nucella_2kb_clean_noMito_noBac
 
+```
+# Check new filtered assembly with BUSCO and SeqKit
+
+```
+nohup busco \
+  -i nlap_genome_no_mito_no_bac.filtered.fasta\
+  -o busco_april_final \
+  -m genome \
+ --metaeuk \
+  -c 35 \
+  -l metazoa_odb10 &
+
+seqkit stats nlap_genome_no_mito_no_bac.filtered.fasta -j25
 
 ```
 
