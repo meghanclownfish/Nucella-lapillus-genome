@@ -32,9 +32,10 @@
 14. spin for 20 min @ 13,000 rpm / 16,627 rcf 
 15. remove/discard supernatant by gentle pipetting
 16. gently add 1000 μL of cold 70% ethanol to wash the pellet (do not mix, dribble down side of tube)
-17. air-dry the pellet (but not to completion): remove as much ethanol as possible by subjecting the tube to a quick
+17. remove the ethanol
+18. air-dry the pellet (but not to completion): remove as much ethanol as possible by subjecting the tube to a quick
 spin in the microcentrifuge and removing residual ethanol. Let sit open to the air for a few minutes.
-18. resuspend pellet in TE buffer(200 μl) 
+19. resuspend pellet in TE buffer(200 μl) 
 
 ## RNAse A Treatment 
 * add 10ul of RNAse A
