@@ -31,7 +31,7 @@
 13. precipitate DNA by leaving in –80°C freezer for 40 min 
 14. spin for 20 min @ 13,000 rpm / 16,627 rcf 
 15. remove/discard supernatant by gentle pipetting
-16. gently add 1000 μL of cold 70% ethanol to wash the pellet (do not mix, dribble down side of tube)
+16. gently add 1000 μL of cold 70% ethanol to wash the pellet
 17. remove the ethanol
 18. air-dry the pellet (but not to completion): remove as much ethanol as possible by subjecting the tube to a quick
 spin in the microcentrifuge and removing residual ethanol. Let sit open to the air for a few minutes.
@@ -41,7 +41,7 @@ spin in the microcentrifuge and removing residual ethanol. Let sit open to the a
 * add 10ul of RNAse A
 * mix by inversion 
 * incubate at 37C for ~1 hour (mix at 200rpm for samples with high concentrations) \
- note: the protein will be filtered out by the ZYMO clean and concentrator
+ note: the RNAse A will be filtered out by the ZYMO clean and concentrator
 
 ## ZYMO gDNA clean and concentrator: 
 * follow manufacturer's protocol 
