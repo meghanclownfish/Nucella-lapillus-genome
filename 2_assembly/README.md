@@ -29,7 +29,6 @@ busco \
   -i /home/meghan/nucella_genome/hifiasm/hifiasm_2kb.p_ctg.fa \
   -o busco_hifi \
   -m genome \
- --metaeuk \
   -c 20 \
   -l metazoa_odb10
 
@@ -66,7 +65,6 @@ nohup busco \
   -i nlap_genome_no_mito_no_bac.fasta\
   -o no_mito_no_bac_busco \
   -m genome \
- --metaeuk \
   -c 35 \
   -l metazoa_odb10 &
 
@@ -109,7 +107,6 @@ nohup busco \
   -i nlap_genome_no_mito_no_bac.filtered.fasta\
   -o busco_april_final \
   -m genome \
- --metaeuk \
   -c 35 \
   -l metazoa_odb10 &
 
