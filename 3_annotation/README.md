@@ -71,48 +71,50 @@ singularity exec /home/meghan/braker3.sif tsebra.py \
 ```
 ### filtering
 ```
+# longest isoform
+singularity exec /home/meghan/braker3.sif get_longest_isoform.py --gtf aug_enforcement.gtf --out longest_insoforms.gtf
+
+# convert to gff3
+singularity exec /home/meghan/braker3.sif rename_gtf.py --gtf longest_insoforms.gtf --out longest_insoforms_renamed.gtf
+singularity exec /home/meghan/braker3.sif gtf2gff.pl < longest_insoforms_renamed.gtf --out=longest_insoforms_renamed.gff3 --gff3
+
+
 singularity run /home/meghan/agat_1.4.2--pl5321hdfd78af_0.sif
 
-agat_sp_keep_longest_isoform.pl -f aug_enforcement.gtf -o iso_filt_aug_enforcement.gtf 
+#overlapping
+agat_sp_fix_overlaping_genes.pl -f longest_insoforms_renamed.gff3  -o v2_fixed_overlap_longest_insoforms_renamed.gff3
 
-# 9597 L2 isoforms with CDS removed (shortest CDS)
+#388 genes overlap no_exon_longest_insoforms_renamed.gff3
 
-# extract prot seq 
-agat_sp_extract_sequences.pl -g iso_filt_aug_enforcement.gtf \
--f /home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
--o iso_filt_aug_enforcement.faa -p
-```
+#incomplete
+agat_sp_filter_incomplete_gene_coding_models.pl --gff v2_fixed_overlap_longest_insoforms_renamed.gff3 --fasta /home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked -o v2_remove_incomplete_fixed_overlap_longest_insoforms_renamed.gff3
 
-
-## EnTAP
-```
-#entap with uniprot_sprot an refseq_invertebrarte
-
-singularity run ../entap.sif
-
-#configure
-EnTAP --config --run-ini entap_run.params --entap-ini entap_config.ini -t 5
-
-#update all paths in parms and ini with given info before moving on. For eggNog SQL database in .ini
-#include path but not file (EnTap will not understand if you give file) 
-
-#run entap
-EnTAP --run -i iso_filt_aug_enforcement.faa -t 35
+#Number of genes affected: 969
 ```
 
 ## Interproscan
 ```
 nohup singularity exec \
--B $PWD/interproscan-5.73-104.0/data:/opt/interproscan/data \
--B $PWD/input:/input \   
--B $PWD/temp:/temp\
--B $PWD/output:/output \
-interproscan_5.73-104.0.sif\
-/opt/interproscan/interproscan.sh --cpu 35\
---input /input/iso_filt_v2_aug_enforcement.faa\
---disable-precalc -iprlookup --goterms\
---output-dir /output\
---tempdir /temp &
+    -B $PWD/interproscan-5.73-104.0/data:/opt/interproscan/data \
+    -B $PWD/input:/input \
+    -B $PWD/temp:/temp \
+    -B $PWD/output:/output \
+    interproscan_5.73-104.0.sif \
+    /opt/interproscan/interproscan.sh \
+--cpu 35 \
+    --input /input/agat_braker_longest_insoforms_fixed_ids.faa\
+    --disable-precalc \
+-iprlookup \
+--goterms \
+    --output-dir /output \
+    --tempdir /temp \
+-appl TIGRFAM,Pfam, CDD &
+```
+
+
+## Funannotate
+```
+nohup funannotate annotate --gff /home/meghan/v3_nucella_genome/v2_remove_incomplete_fixed_overlap_longest_insoforms_renamed.gff3 --fasta /home/meghan/v3_nucella_genome/nlap_genome_no_mito_no_bac.filtered.fasta --species "Nucella lapillus" --out fun_noEgg_v2_0f_v3 --iprscan /home/meghan/v3_nucella_genome/v2_remove_incomplete_fixed_overlap_agat_longest_isoforms.faa.xml --rename ACOMHN --busco_db metazoa --cpus 35 --sbt /home/meghan/template.sbt &
 ```
 
 <img width="319" alt="Screenshot 2025-03-12 at 3 41 40 PM" src="https://github.com/user-attachments/assets/180161dc-8bf1-43ff-ba51-fef8734f33e0" />
