@@ -4,7 +4,7 @@
 2. map RNA to masked genome 
 3. Braker3
 4. TSEBRA
-5. EnTAP/ Interproscan
+5. Interproscan/ Funannotate
 
 
 ## Identify repeats
