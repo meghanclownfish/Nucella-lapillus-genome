@@ -26,7 +26,7 @@ awk '/^S/{print ">"$2;print $3}' hifi_cleaned_barcode.bp.p_ctg.gfa  > hifi_clean
 
 #run BUSCO 
 busco \
-  -i /home/meghan/nucella_genome/hifiasm/hifiasm_2kb.p_ctg.fa \
+  -i /home/meghan/nucella_genome/hifiasm/hifi_cleaned_barcode.bp.p_ctg.fa \
   -o busco_hifi \
   -m genome \
   -c 20 \
