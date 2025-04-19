@@ -4,7 +4,6 @@
 2. map RNA to masked genome 
 3. Braker3
 4. TSEBRA
-5. Interproscan/ Funannotate
 
 
 ## Identify repeats
@@ -14,7 +13,7 @@ conda activate repeatmodeler_env
 #RepeatModeler (version = 2.0.6) pull image
 singularity pull dfam-tetools-latest.sif docker://dfam/tetools:latest
 
-#build database
+#build database (this is fast)
 singularity run ../dfam-tetools-latest.sif
 BuildDatabase -name nucella_genome_april nlap_genome_no_mito_no_bac.filtered.fasta 
 
@@ -62,26 +61,27 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/v3_nucella_april/
 
 ## TSEBRA
 ```
-#run TSEBRA
+#run TSEBRA and filter out single-exon genes 
 singularity exec /home/meghan/braker3.sif tsebra.py \
--g /home/meghan/nucella_genome/annotate/no_scaffold/braker/GeneMark-ETP/genemark.gtf \
--k /home/meghan/nucella_genome/annotate/no_scaffold/braker/Augustus/augustus.hints.gtf \
--e /home/meghan/nucella_genome/annotate/no_scaffold/braker/hintsfile.gff \
--c no_enforcement.cfg -o aug_enforcement.gtf 
+-g /home/meghan/nucella_genome/annotate/v3_nucella_april/braker/braker/GeneMark-ETP/genemark.gtf \
+-k /home/meghan/nucella_genome/annotate/v3_nucella_april/braker/braker/Augustus/augustus.hints.gtf \
+-e /home/meghan/nucella_genome/annotate/v3_nucella_april/braker/braker/hintsfile.gff \
+--filter_single_exon_genes \
+-c tsebra.cfg -o aug_enforcement.gtf 
+
 ```
 ### filtering
 ```
-# longest isoform
+#longest isoform
 singularity exec /home/meghan/braker3.sif get_longest_isoform.py --gtf aug_enforcement.gtf --out longest_insoforms.gtf
 
-# convert to gff3
+#convert to gff3
 singularity exec /home/meghan/braker3.sif rename_gtf.py --gtf longest_insoforms.gtf --out longest_insoforms_renamed.gtf
 singularity exec /home/meghan/braker3.sif gtf2gff.pl < longest_insoforms_renamed.gtf --out=longest_insoforms_renamed.gff3 --gff3
 
-
 singularity run /home/meghan/agat_1.4.2--pl5321hdfd78af_0.sif
 
-#overlapping
+#remove overlapping
 agat_sp_fix_overlaping_genes.pl -f longest_insoforms_renamed.gff3  -o v2_fixed_overlap_longest_insoforms_renamed.gff3
 
 #388 genes overlap no_exon_longest_insoforms_renamed.gff3
