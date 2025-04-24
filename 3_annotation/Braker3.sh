@@ -6,26 +6,43 @@ singularity build braker3.sif docker://teambraker/braker3:latest
 conda activate repeatmodeler_env
 
 #run braker3
-nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_braker /home/meghan/braker3.sif braker.pl \
---genome=/home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
---species=v1_nucella  --softmasking --threads=35 \
---prot_seq=/home/meghan/nucella_genome/database/eukaryota_and_molluscan_protien.fasta \
---bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
+nohup singularity exec -B /home/meghan/nucella_genome/annotate/v3_nucella_april/braker /home/meghan/braker3.sif braker.pl \
+--genome=/home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked \
+--species=nLapillus  --softmasking --threads=30 \
+--prot_seq=/home/meghan/nucella_genome/database/metazoa_and_mlluscan_protien.fasta \
+--bam=/home/meghan/nucella_genome/annotate/v3_nucella_april/april_all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
-#run TSEBRA 
+#run tsebra 
+
 singularity exec /home/meghan/braker3.sif tsebra.py \
--g /home/meghan/nucella_genome/annotate/no_scaffold/braker/GeneMark-ETP/genemark.gtf \
--k /home/meghan/nucella_genome/annotate/no_scaffold/braker/Augustus/augustus.hints.gtf \
--e /home/meghan/nucella_genome/annotate/no_scaffold/braker/hintsfile.gff \
--c no_enforcement.cfg -o aug_enforcement.gtf 
+-g /home/meghan/nucella_genome/annotate/v3_nucella_april/braker/braker/GeneMark-ETP/genemark.gtf \
+-k /home/meghan/nucella_genome/annotate/v3_nucella_april/braker/braker/Augustus/augustus.hints.gtf \
+-e /home/meghan/nucella_genome/annotate/v3_nucella_april/braker/braker/hintsfile.gff \
+--filter_single_exon_genes \
+-c tsebra.cfg -o aug_enforcement.gtf 
 
-# keep longest iso and extract protein seq
-agat_sp_keep_longest_isoform.pl -f aug_enforcement.gtf -o iso_filt_aug_enforcement.gtf 
+#longest iso 
 
-# 9597 L2 isoforms with CDS removed (shortest CDS)
+singularity exec /home/meghan/braker3.sif get_longest_isoform.py --gtf aug_enforcement.gtf --out longest_insoforms.gtf
 
-# extract prot seq 
-agat_sp_extract_sequences.pl -g iso_filt_aug_enforcement.gtf \
--f /home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
--o iso_filt_aug_enforcement.faa -p
+#formatting 
+singularity exec /home/meghan/braker3.sif rename_gtf.py --gtf longest_insoforms.gtf --out longest_insoforms_renamed.gtf
+singularity exec /home/meghan/braker3.sif gtf2gff.pl < longest_insoforms_renamed.gtf --out=longest_insoforms_renamed.gff3 --gff3 
+
+#fix overlap 
+agat_sp_fix_overlaping_genes.pl -f longest_insoforms_renamed.gff3  -o v2_fixed_overlap_longest_insoforms_renamed.gff3
+
+#filter incomplete
+agat_sp_filter_incomplete_gene_coding_models.pl --gff v2_fixed_overlap_longest_insoforms_renamed.gff3 \
+--fasta /home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked \
+-o v2_remove_incomplete_fixed_overlap_longest_insoforms_renamed.gff3
+
+#get proteome 
+singularity run /home/meghan/agat_1.4.2--pl5321hdfd78af_0.sif
+
+agat_sp_extract_sequences.pl -g v2_remove_incomplete_fixed_overlap_longest_insoforms_renamed.gff3 \
+-f /home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked  \
+-o v2_remove_incomplete_fixed_overlap_agat_longest_isoforms.faa --clean_internal_stop -p
+
+
