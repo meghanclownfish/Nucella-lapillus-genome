@@ -1,9 +1,8 @@
 # The Atlantic dog whelk (_Nucella lapillus_) genome
 
-This Whole Genome Shotgun project has been deposited at DDBJ/ ENA/GenBank under the accession JBNHDL000000000. The version described in this paper is version JBNHDL010000000.  
-
+This Whole Genome Shotgun project was generated with ONT long reads and RNASeq data. The genome has been deposited at DDBJ/ ENA/GenBank under the accession JBNHDL000000000. 
 Data generated in this study are available under NCBI BioProject PRJNA1238877. 
-
+ 
 The DNA extraction protocol and code used are housed in this repository. 
 
 ## Sample information 
