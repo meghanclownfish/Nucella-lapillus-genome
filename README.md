@@ -21,6 +21,6 @@ Libraries were prepped with the ONT ligation sequencing kit and NEB companion mo
 
 ## Assembly and annotation
 
-Briefly, we assembled the genome using all reads of 2kb in length or greater with Hifiasm. Blobtools was used to visually assess the assembly and filter contigs. RepeatModeler and RepeatMasker identified and soft-masked repetitive regions in the genome. RNASeq data was mapped to the soft-masked genome with HISAT2. This information, along with a custom protein database, was supplied as evidence for Braker3. TSEBRA was used to merge Braker outputs. Functional annotation was carried out with EnTAP and InterProScan.  
+Briefly, we assembled the genome using all reads of 2kb in length or greater with Hifiasm. Blobtools was used to visually assess the assembly and filter contigs. RepeatModeler and RepeatMasker identified and soft-masked repetitive regions in the genome. RNASeq data was mapped to the soft-masked genome with HISAT2. This information, along with a custom protein database, was supplied as evidence for Braker3. TSEBRA was used to merge Braker outputs. Functional annotation was carried out with InterProScan and Funannotate.  
 
  
