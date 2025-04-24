@@ -1,8 +1,10 @@
 # The Atlantic dog whelk (_Nucella lapillus_) genome
 
-A reference genome was assembled using ONT long reads. 
+This Whole Genome Shotgun project has been deposited at DDBJ/ ENA/GenBank under the accession JBNHDL000000000. The version described in this paper is version JBNHDL010000000.  
 
-The final genome and annotations can be found under the NCBI BioProject PRJNA1238877. 
+Data generated in this study are available under NCBI BioProject PRJNA1238877. 
+
+The DNA extraction protocol and code used are housed in this repository. 
 
 ## Sample information 
 An individual was collected in Nahant, MA, in 2024 and is pictured below. The foot tissue was used for DNA extraction and isolation. The extraction protocol can be found in the [extraction file](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/6ee388e96acaa53040e682a8f8f69fad87a258cc/extraction)  
