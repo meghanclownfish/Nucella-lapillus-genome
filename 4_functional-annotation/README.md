@@ -1,13 +1,3 @@
-## get proteome for InterProScan
-
-```
-singularity run /home/meghan/agat_1.4.2--pl5321hdfd78af_0.sif
-
-agat_sp_extract_sequences.pl -g v2_remove_incomplete_fixed_overlap_longest_insoforms_renamed.gff3 \
--f /home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked \
--o v2_remove_incomplete_fixed_overlap_agat_longest_isoforms.faa --clean_internal_stop -p
-
-```
 
 ## InterProScan
 This is done in about 4 hours.
@@ -31,7 +21,7 @@ nohup singularity exec \
 
 
 ## Funannotate
-
+This is done in about 3 hours.
 ```
 conda activate funannotate
 export FUNANNOTATE_DB=/home/meghan/fun_db
