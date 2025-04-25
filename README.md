@@ -6,7 +6,7 @@ Data generated in this study are available under NCBI BioProject PRJNA1238877.
 The DNA extraction protocol and code used are housed in this repository. 
 
 ## Sample information 
-An individual was collected in Nahant, MA, in 2024 and is pictured below. The foot tissue was used for DNA extraction and isolation. The extraction protocol can be found in the [extraction file](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/6ee388e96acaa53040e682a8f8f69fad87a258cc/extraction)  
+An individual was collected in Nahant, MA, in 2024 and is pictured below. The foot tissue was used for DNA extraction and isolation. The extraction protocol can be found in the [extraction file](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/1_extraction)  
 
 <img src="https://github.com/meghanclownfish/snail-DNA-extractions/assets/78237587/2455c8bc-c58e-4127-9c2b-5f94616deefb" width="200" height="200">
 
