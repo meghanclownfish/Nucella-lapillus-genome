@@ -38,7 +38,10 @@ seqkit stats hifi_cleaned_barcode.bp.p_ctg.fa -j10
 # Check for adapter contamination
 
 ```
-./run_fcsadaptor.sh --fasta-input /home/meghan/nucella_genome/hifiasm/bp_trim_assemble/hifi_cleaned_barcode.bp.p_ctg.fa --output-dir ./output_fcs --euk --container-engine singularity --image fcs-adaptor.sif
+./run_fcsadaptor.sh --fasta-input /home/meghan/nucella_genome/hifiasm/bp_trim_assemble/hifi_cleaned_barcode.bp.p_ctg.fa \
+--output-dir ./output_fcs \
+--euk --container-engine singularity \
+--image fcs-adaptor.sif
 ```
 
 
