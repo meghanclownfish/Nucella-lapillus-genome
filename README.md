@@ -26,3 +26,5 @@ Briefly, we assembled the genome using all reads of 2kb in length or greater wit
 Assembly commands can be found in [2_assembly](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/2_assembly) \
 Annotation commands are in [3_annotation](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/3_annotation)\
 Functional annotation commands are located in [4_functional-annotation](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/4_functional-annotation)
+
+*All pictures in this repository were taken by Meghan Ford 
