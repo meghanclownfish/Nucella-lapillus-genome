@@ -27,4 +27,5 @@ Assembly commands can be found in [2_assembly](https://github.com/meghanclownfis
 Annotation commands are in [3_annotation](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/3_annotation)\
 Functional annotation commands are located in [4_functional-annotation](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/4_functional-annotation)
 
-*All pictures in this repository were taken by Meghan Ford 
+##
+All pictures in this repository were taken by Meghan Ford 
