@@ -54,7 +54,7 @@ SRR999591_trimmed.fq -S all_mapped_rna.sam
 nohup singularity exec -B /home/meghan/nucella_genome/annotate/v3_nucella_april/braker /home/meghan/braker3.sif braker.pl \
 --genome=/home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked \
 --species=nLapillus  --softmasking --threads=30 \
---prot_seq=/home/meghan/nucella_genome/database/metazoa_and_mlluscan_protien.fasta \
+--prot_seq=/home/meghan/nucella_genome/database/mulluscan_protien.fasta \
 --bam=/home/meghan/nucella_genome/annotate/v3_nucella_april/april_all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 ```
