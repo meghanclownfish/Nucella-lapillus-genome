@@ -51,6 +51,7 @@ SRR999591_trimmed.fq -S all_mapped_rna.sam
 
 ```
 #run braker3
+#this ran for about 2 days
 nohup singularity exec -B /home/meghan/nucella_genome/annotate/v3_nucella_april/braker /home/meghan/braker3.sif braker.pl \
 --genome=/home/meghan/nucella_genome/annotate/v3_nucella_april/nlap_genome_no_mito_no_bac.filtered.fasta.masked \
 --species=nLapillus  --softmasking --threads=30 \
