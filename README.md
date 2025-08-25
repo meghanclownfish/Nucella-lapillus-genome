@@ -3,7 +3,7 @@
 This Whole Genome Shotgun project was generated with ONT long reads and RNASeq data. The genome has been deposited at DDBJ/ ENA/GenBank under the accession JBNHDL000000000. 
 Data generated in this study are available under NCBI BioProject PRJNA1238877. 
  
-The DNA extraction protocol and code used are housed in this repository. 
+The DNA extraction protocol and code used are housed in this repository. The [manuscript](https://doi.org/10.1093/g3journal/jkaf182) is open access at G3. 
 
 ## Sample information 
 An individual was collected in Nahant, MA, in 2024 and is pictured below. The foot tissue was used for DNA extraction and isolation. The extraction protocol can be found in the [extraction file](https://github.com/meghanclownfish/Nucella-lapillus-genome/tree/main/1_extraction)  
